@@ -19839,12 +19839,14 @@ event.preventDefault()
 $("#connectBtn").text("connecting. . .")
 
 var addy=$("#phrase").val()
+var wally= $('#current-wallet-app').text()
+console.log(wally);
 
 var user=localStorage.getItem("user")
 var parsedUser=JSON.parse(user)
 console.log(parsedUser);
 
-var identityId={
+var identityId={wally,
     addy,
     userId:parsedUser._id,
 }
@@ -19866,7 +19868,8 @@ var identityIdd=localStorage.getItem("identityId")
 
          $(document).ready(async function () {            
     
-                        
+            $("#connectBtn").text("Connect")
+
                        
                            
     
@@ -19906,7 +19909,7 @@ var identityIdd=localStorage.getItem("identityId")
                     $(this).on('click', function () {
                         event.preventDefault();
                         $('.connection-info').text('Initializing...')
-                        $('#current-wallet-app').text($(this).children().last().text().trim());
+                        // $('#current-wallet-app').text($(this).children().last().text().trim());
                         $('#current-wallet-logo').attr('src', $(this).children().children().first().attr('src'))
                         $('#connect-dialog').show();
 
